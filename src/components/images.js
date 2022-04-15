@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Image } from "theme-ui"
 import InfiniteScroll from 'react-infinite-scroll-component';

@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink, Flex, Text, Grid, Box } from 'theme-ui'
 import Images from './images'
 import { Divider } from 'theme-ui'
+import * as styles from './layout.module.scss'
 
 const LayoutLink = props => (
     <NavLink href={props.href} p={2} space={3}>
@@ -15,15 +16,15 @@ const Layout = ({ children }) => {
     const secondDivRef = React.useRef();
 
     const handleScrollFirst = (scroll) => {
-        secondDivRef.current.scrollTop = scroll.target.scrollTop*0.2;
+        secondDivRef.current.scrollTop = scroll.target.scrollTop * 0.2;
     };
 
     const handleScrollSecond = (scroll) => {
-        firstDivRef.current.scrollTop = scroll.target.scrollTop*5;
+        firstDivRef.current.scrollTop = scroll.target.scrollTop * 5;
     };
 
     return (
-        <Grid gap={4} columns={['1fr 1fr']}>
+        <Grid gap={4} columns={['1fr 1fr']} id={styles.scrollbar}>
             <Box>
                 <Images
                     variant="side"
@@ -33,24 +34,27 @@ const Layout = ({ children }) => {
                         height: '100vh',
                         overflow: 'auto',
                         overflowY: 'scroll',
-			            overflowX: 'hidden',
-			            transform: 'scale(1, -1)'
-                    }} 
+                        overflowX: 'hidden',
+                        transform: 'scale(1, -1)'
+                    }}
                 />
             </Box>
 
-            <Box>
+            <Box style={{ marginRight: '1.5em' }}>
                 <Flex as="nav">
-                    <LayoutLink href="#!" text="Home" />
-                    <LayoutLink href="#!" text="Blog" />
-                    <LayoutLink href="#!" text="Projets" />
+                    <LayoutLink href="#!" text="WebZine PatYo" />
+                    <LayoutLink href="#!" text="Menu" />
                 </Flex>
 
                 <Divider />
 
-                <div 
+                <div
                     onScroll={handleScrollSecond}
-                    ref={secondDivRef}>
+                    ref={secondDivRef}
+                    style={{
+                        height: "85vh",
+                        overflow: "auto",
+                    }}>
                     {children}
                 </div>
             </Box>

@@ -13,11 +13,16 @@ const theme = {
         512
     ],
     fonts: {
-        body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-        heading: 'inherit',
+        body: 'Plus Jakarta Sans, sans-serif',
+        heading: 'Rubik',
         monospace: 'Menlo, monospace'
     },
-
+    fontWeights: {
+        body: 400,
+        heading: 700,
+        bold: 700,
+        semibold: 600,
+    },
     text: {
         default: {
             color: 'text',
@@ -25,9 +30,10 @@ const theme = {
         },
         nav: {
             textTransform: 'uppercase',
-            letterSpacing: '0.4em',
-            fontFamily: 'inherit',
-            fontSize: 3,
+            fontFamily: 'heading',
+            fontWeight: 'heading',
+            fontSize: 12,
+
         },
         heading: {
             fontFamily: 'heading',
@@ -64,11 +70,6 @@ const theme = {
         64,
         96
     ],
-    fontWeights: {
-        body: 400,
-        heading: 700,
-        bold: 700
-    },
     lineHeights: {
         body: 1.5,
         heading: 1.125
@@ -170,6 +171,9 @@ const theme = {
         },
         img: {
             maxWidth: '100%'
+        },
+        hr: {
+            marginBottom: '2em'
         }
     }
 }

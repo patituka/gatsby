@@ -4,3 +4,5 @@ package-lock.json
 .cache/*
 public/*
 .env.development
+content/*
+src/images/*
